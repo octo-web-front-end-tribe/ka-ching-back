@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/michaelakbaraly/ka-ching-back/issues"
   },
-  "homepage": "https://github.com/michaelakbaraly/ka-ching-back#readme"
+  "homepage": "https://github.com/michaelakbaraly/ka-ching-back#readme",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
 }
