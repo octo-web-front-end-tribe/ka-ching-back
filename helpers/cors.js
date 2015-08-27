@@ -1,7 +1,7 @@
 var CORS_HEADER = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS,HEAD",
-  "Access-Control-Allow-Headers": "Origin, Content-Type, Accept, Range"
+  "Access-Control-Allow-Headers": "Origin, Content-Type, Accept, Range, Authorization"
 };
 
 module.exports = {
