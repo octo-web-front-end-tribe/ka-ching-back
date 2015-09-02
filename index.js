@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var corsHelper = require("./helpers/cors.js");
-var _SECRET = "secret_a_changer"
+var _SECRET = "secret_a_changer";
 var app = express();
 
 app.use(bodyParser.json());
@@ -47,9 +47,16 @@ app.get('/api/restricted', function (req, res) {
     });
 });
 
-var server = app.listen(3000, function () {
+app.get('/api/friends', function (req, res){
+    res.json([{
+        name: 'Spiderman'
+    }, {
+        name: 'Superman'
+    }, {
+        name: 'JavaScriptMan'
+    }])
+});
 
-    var host = server.address().address;
-    var port = server.address().port;
+var server = app.listen(3000, function () {
 
 });
