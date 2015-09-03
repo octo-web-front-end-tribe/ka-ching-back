@@ -47,7 +47,7 @@ app.get('/api/restricted', function (req, res) {
     });
 });
 
-app.get('/api/friends', function (req, res){
+app.get('/api/friends', function (req, res) {
     res.json([{
         name: 'Spiderman'
     }, {
@@ -57,6 +57,13 @@ app.get('/api/friends', function (req, res){
     }])
 });
 
-var server = app.listen(3000, function () {
+app.get('/api/account', function (req, res) {
+    res.json({
+        id: '1',
+        balance: '123'
+    })
+});
 
+var server = app.listen(3000, function () {
+    console.info('running on port 3000');
 });
