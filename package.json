@@ -15,7 +15,7 @@
   "homepage": "https://github.com/michaelakbaraly/ka-ching-back#readme",
   "private": true,
   "scripts": {
-    "test": "mocha -R spec ./test/**/*"
+    "test": "./bin/www && mocha -R spec ./test/**/*"
   },
   "dependencies": {
     "async": "1.3.0",
