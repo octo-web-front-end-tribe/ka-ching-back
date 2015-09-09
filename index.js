@@ -6,7 +6,12 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var corsHelper = require("./helpers/cors.js");
 var _SECRET = "secret_a_changer";
+
+var FriendsAPI = require("./api/friendsApi.js")
+var AccountAPI = require("./api/accountApi.js")
+
 var app = express();
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -47,22 +52,9 @@ app.get('/api/restricted', function (req, res) {
     });
 });
 
-app.get('/api/friends', function (req, res) {
-    res.json([{
-        name: 'Spiderman'
-    }, {
-        name: 'Superman'
-    }, {
-        name: 'JavaScriptMan'
-    }])
-});
+app.get('/api/friends', FriendsAPI.getFriends);
 
-app.get('/api/account', function (req, res) {
-    res.json({
-        id: '1',
-        balance: '123'
-    })
-});
+app.get('/api/account', AccountAPI.getAccount);
 
 var server = app.listen(3000, function () {
     console.info('running on port 3000');
