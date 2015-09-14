@@ -6,11 +6,14 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var corsHelper = require("./helpers/cors.js");
 var _SECRET = "secret_a_changer";
-
 var FriendsAPI = require("./api/friendsApi.js")
 var AccountAPI = require("./api/accountApi.js")
+var Datastore = require("nedb");
 
 var app = express();
+
+var database = new Datastore("database.db");
+var friendsAPI = new FriendsAPI(database);
 
 
 app.use(bodyParser.json());
@@ -52,7 +55,7 @@ app.get('/api/restricted', function (req, res) {
     });
 });
 
-app.get('/api/friends', FriendsAPI.getFriends);
+app.get("api/friends", friendsAPI.getFriends);
 
 app.get('/api/account', AccountAPI.getAccount);
 
