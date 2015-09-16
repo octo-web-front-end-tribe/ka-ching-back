@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "name": "John Doe",
+      "username": "john.doe",
+      "password": "foobar"
+    },
+    {
+      "name": "Bernard Madoff",
+      "username": "bernard.madoff",
+      "password": "jail"
+    }
+  ]
+}
