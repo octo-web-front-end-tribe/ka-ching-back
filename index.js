@@ -12,7 +12,10 @@ var Datastore = require("nedb");
 
 var app = express();
 
+process.title = "kaching_back";
+
 var friendsDB = new Datastore({filename: process.env.KACHING_DATABASE_PATH + "/friends.db", autoload: true});
+console.log('Database path : ', process.env.KACHING_DATABASE_PATH);
 var friendsAPI = new FriendsAPI(friendsDB);
 
 
@@ -59,6 +62,6 @@ app.get("/api/friends/:username", friendsAPI.getFriends);
 
 app.get('/api/account', AccountAPI.getAccount);
 
-var server = app.listen(3000, function () {
+app.listen(3000, function () {
     console.info('running on port 3000');
 });
