@@ -12,7 +12,7 @@ var Datastore = require("nedb");
 
 var app = express();
 
-var friendsDB = new Datastore({filename: "ka-ching-back/friends.db", autoload: true});
+var friendsDB = new Datastore({filename: process.env.KACHING_DATABASE_PATH + "/friends.db", autoload: true});
 var friendsAPI = new FriendsAPI(friendsDB);
 
 

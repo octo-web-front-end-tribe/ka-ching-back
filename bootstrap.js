@@ -1,7 +1,7 @@
 var Datastore = require("nedb");
 var request = require("request");
-var usersDB = new Datastore({ filename: "users.db", autoload: true });
-var friendsDB = new Datastore({ filename: "friends.db", autoload: true });
+var usersDB = new Datastore({ filename: process.env.database_path + "/users.db", autoload: true });
+var friendsDB = new Datastore({ filename: process.env.database_path + "/friends.db", autoload: true });
 var fs = require("fs");
 
 usersDB.remove({});
