@@ -12,7 +12,7 @@ var Datastore = require("nedb");
 
 var app = express();
 
-process.title = "kaching_back";
+process.title = "kaching_ba";
 
 var friendsDB = new Datastore({filename: process.env.KACHING_DATABASE_PATH + "/friends.db", autoload: true});
 console.log('Database path : ', process.env.KACHING_DATABASE_PATH);

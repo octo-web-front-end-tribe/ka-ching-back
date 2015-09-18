@@ -1,3 +1,2 @@
 # must be run on project root path
-pkill kaching_back &&
 PORT=3000 KACHING_DATABASE_PATH='./database' node index &
